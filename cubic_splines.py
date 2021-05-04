@@ -5,7 +5,7 @@ from sympy import symbols, diff, sin, cos, sqrt
 
 hi = []
 bi = []
-xi = [1,4,9]
+xi = [1, 4, 9]
 yi = []
 Ui = []
 Vi = []
@@ -33,9 +33,7 @@ def z_calc(n):
         Vi.append(bi[i] - bi[i - 1] - ((hi[i - 1]) ** 2) / Ui[i] * Vi[i - 1])
     # solving top to bottom
     for i in range(n - 2, 0, -1):
-        print(i)
         Zi.insert(i, (Vi[i] - hi[i] * Zi[i + 1]) / Ui[i])
-    print(f'zi len :{len(Zi)} hi len :{len(hi)}')
     print(Zi)
 
 
@@ -55,5 +53,5 @@ if __name__ == '__main__':
         # xi.append(i)
         yi.append(fx.evalf(subs={x: i}))
         # print(xi)
-    z_calc(len(xi) )
+    z_calc(len(xi))
     # print(f'fx is :{xi} dfx is {yi}')
