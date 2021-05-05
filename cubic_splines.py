@@ -73,12 +73,16 @@ if __name__ == '__main__':
         funcY[i] = f(axisX[i])
 
 
+    plt.scatter(xi, yi, color = 'black', zorder = 3)
+    for i_x, i_y in zip(xi, yi):
+        plt.text(i_x, i_y, '({:.2f}, {:.2f})'.format(i_x, i_y))
     plt.plot(axisX, cubicY)
     plt.plot(axisX, funcY)
     plt.xlabel('X')
     plt.ylabel('Y')
     plt.legend(['Cubic Splines', 'Original function'])
+    plt.axhline(linewidth = 2, color = 'black')
+    plt.axvline(linewidth=2, color='black')
     plt.grid()
     plt.title('Cubic Splines')
     plt.show()
-
