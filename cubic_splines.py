@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sympy import symbols, diff, sin, cos, sqrt
 
-xi = np.empty(5)
+xi = np.empty(13)
 yi = np.empty(len(xi))
 
 def f(x):
@@ -58,14 +58,13 @@ def S(x, Z, h, C, D):
 
 if __name__ == '__main__':
 
-    xi = np.linspace(-6, 6, 5)
-    print(xi)
+    xi = np.linspace(-6, 6, 13)
     for i in range(len(xi)):
         yi[i] = f(xi[i])
 
     Z, h, C, D = aaa()
 
-    axisX = np.linspace(xi[0], xi[-1],(int)(xi[-1] - xi[0])*50)
+    axisX = np.linspace(xi[0], xi[-1], (int)(xi[-1] - xi[0])*50)
     cubicY = np.empty(len(axisX))
     funcY = np.empty(len(axisX))
     for i in range(len(axisX)):
@@ -73,16 +72,16 @@ if __name__ == '__main__':
         funcY[i] = f(axisX[i])
 
 
-    plt.scatter(xi, yi, color = 'black', zorder = 3)
+    plt.scatter(xi, yi, color = 'black', zorder = 3, linewidth = 0.1)
     for i_x, i_y in zip(xi, yi):
         plt.text(i_x, i_y, '({:.2f}, {:.2f})'.format(i_x, i_y))
     plt.plot(axisX, cubicY)
     plt.plot(axisX, funcY)
-    plt.xlabel('X')
-    plt.ylabel('Y')
+    # plt.xlabel('X')
+    # plt.ylabel('Y')
     plt.legend(['Cubic Splines', 'Original function'])
     plt.axhline(linewidth = 2, color = 'black')
-    plt.axvline(linewidth=2, color='black')
+    plt.axvline(linewidth = 2, color = 'black')
     plt.grid()
     plt.title('Cubic Splines')
     plt.show()
