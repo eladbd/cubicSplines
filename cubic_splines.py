@@ -15,7 +15,7 @@ def z_calc():
     v = np.empty(n)
     Z = np.empty(n)
     h = np.empty(n - 1)
-    # initialize
+    # initializeietion
     for i in range(0, n - 1):
         h[i] = xi[i + 1] - xi[i]
         b[i] = (6 / h[i]) * (yi[i + 1] - yi[i])
