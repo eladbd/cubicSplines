@@ -28,7 +28,7 @@ def z_calc():
     # classification
     for i in range(2, n - 1):
         u[i] = 2 * (h[i] + h[i - 1]) - ((h[i - 1]) ** 2) / u[i - 1]
-        v[i] = b[i] - b[i - 1] - ((h[i - 1]) ** 2) / (u[i-1] * v[i - 1])
+        v[i] = b[i] - b[i - 1] - h[i - 1] / (u[i-1] * v[i - 1])
     # solving top to bottom
     for i in range(n - 2, 0, -1):
         Z[i] = (v[i] - h[i] * Z[i + 1]) / u[i]
