@@ -79,5 +79,5 @@ if __name__ == '__main__':
         plt.axhline(linewidth = 1, color = 'black')
         plt.axvline(linewidth = 1, color = 'black')
         plt.grid()
-        plt.title('Cubic Splines')
+        plt.title(f'{j} Cubic Splines')
         plt.show()
